@@ -22,25 +22,4 @@ class Colorss{
 
 
 
-//цвет
-//import 'package:flutter/material.dart';
-//
-//class Colors{
-//final Color accent= const Color(0xFF2074F2);
-//
-//шрифт
-//import 'package:flutter/material.dart';
-//
-//class Font{
-//TextStyle get title1SemiBold =>
-//TextStyle(
-//fontSize: 24,
-//fontFamily: 'Roboto',
-//fontWeight: FontWeight.w600,
-//height: 28/24,
-//);
-//
-//отступ
-//import 'package:flutter/material.dart';
-//
-//class Indent{
+
