@@ -49,11 +49,19 @@ class _StorybookState extends State<Storybook> {
             SizedBox(height: 10,),
             ui.cart.cart(onPressed: () {}),
             SizedBox(height: 10,),
+            ui.chips.primary(text: "Популярные", enabled: true, onPressed: (){}),
+            SizedBox(height: 10,),
+            ui.chips.primary(text: "Популярные", enabled: false, onPressed: (){}),
+            SizedBox(height: 10,),
+            ui.login.VK(onPressed: (){}),
+            SizedBox(height: 10,),
+            ui.login.Yandex(onPressed: (){}),
+            SizedBox(height: 10,),
             Row(children: [
-            AppImages.close(size: 20), AppImages.closeC(size: 20),AppImages.closeEye(size: 20),AppImages.correct(size: 20),AppImages.delete(size: 20),AppImages.down(size: 20),AppImages.download(size: 20),AppImages.eye(size: 20),AppImages.filter(size: 20),AppImages.left(size: 20),AppImages.doc(size: 20),AppImages.map(size: 20),
-            AppImages.message(size: 20),AppImages.minus(size: 20),AppImages.nav(size: 20),]),
+            ui.icons.close(size: 20), ui.icons.closeC(size: 20),ui.icons.closeEye(size: 20),ui.icons.correct(size: 20),ui.icons.delete(size: 20),ui.icons.down(size: 20),ui.icons.download(size: 20),ui.icons.eye(size: 20),ui.icons.filter(size: 20),ui.icons.left(size: 20),ui.icons.doc(size: 20),ui.icons.map(size: 20),
+              ui.icons.message(size: 20),ui.icons.minus(size: 20),ui.icons.nav(size: 20),]),
              Row(children: [
-              AppImages.plus(size: 20),AppImages.point(size: 20),AppImages.scr(size: 20),AppImages.search(size: 20),AppImages.shop(size: 20),AppImages.voice(size: 20)
+               ui.icons.plus(size: 20),ui.icons.point(size: 20),ui.icons.scr(size: 20),ui.icons.search(size: 20),ui.icons.shop(size: 20),ui.icons.voice(size: 20)
           ])],
         ),
       ),)

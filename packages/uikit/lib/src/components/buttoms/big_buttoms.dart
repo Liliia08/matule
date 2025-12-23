@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:uikit/src/typography.dart';
-import 'package:uikit/src/colors.dart';
+// import 'package:uikit/src/typography.dart';
+// import 'package:uikit/src/colors.dart';
+import 'package:uikit/uikit.dart';
 
 class BigButtons {
   final Colorss colors = Colorss();

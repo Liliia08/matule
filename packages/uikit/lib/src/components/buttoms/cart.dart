@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:uikit/src/typography.dart';
-import 'package:uikit/src/colors.dart';
-import 'package:uikit/src/images/icons.dart';
+// import 'package:uikit/src/typography.dart';
+// import 'package:uikit/src/colors.dart';
+// import 'package:uikit/src/images/icons.dart';
+import 'package:uikit/uikit.dart';
+
 
 class Cart {
   final Colorss colors = Colorss();
   final Font font = Font();
-
+  final AppImages icons = AppImages();
 
   Widget cart({
     VoidCallback? onPressed,
@@ -27,7 +29,7 @@ class Cart {
           children: [
             Row(
               children: [
-                AppImages.shop(size: 20, color: colors.white, ), // Иконка
+                icons.shop(size: 20, color: colors.white, ), // Иконка
                 SizedBox(width: 16),
                 Text(
                   'В корзину',
