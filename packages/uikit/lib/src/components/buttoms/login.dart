@@ -21,7 +21,7 @@ class Login {
       child: Row(
         children: [
           SizedBox(width: 100.5,),
-          ui.icons.vk(size: 32),
+          ui.icons.vk (size: 32),
           SizedBox(width: 16),
           Text('Войти с VK', style: ui.font.title3Semibold),
         ],

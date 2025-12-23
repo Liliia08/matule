@@ -33,7 +33,6 @@ class AppImages {
       width: size,
       height: size,
       color: color,
-      //areger
     );
   }
 }
