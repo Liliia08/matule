@@ -29,7 +29,7 @@ class Cart {
           children: [
             Row(
               children: [
-                icons.shop(size: 20, color: colors.white, ), // Иконка
+                icons.shop(size: 20, color: colors.white, ),
                 SizedBox(width: 16),
                 Text(
                   'В корзину',
