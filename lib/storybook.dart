@@ -59,9 +59,9 @@ class _StorybookState extends State<Storybook> {
             SizedBox(height: 10,),
             Row(children: [
             ui.icons.close(size: 20), ui.icons.closeC(size: 20),ui.icons.closeEye(size: 20),ui.icons.correct(size: 20),ui.icons.delete(size: 20),ui.icons.down(size: 20),ui.icons.download(size: 20),ui.icons.eye(size: 20),ui.icons.filter(size: 20),ui.icons.left(size: 20),ui.icons.doc(size: 20),ui.icons.map(size: 20),
-              ui.icons.message(size: 20),ui.icons.minus(size: 20),ui.icons.nav(size: 20),]),
-             Row(children: [
-               ui.icons.plus(size: 20),ui.icons.point(size: 20),ui.icons.scr(size: 20),ui.icons.search(size: 20),ui.icons.shop(size: 20),ui.icons.voice(size: 20)
+            ui.icons.message(size: 20),ui.icons.minus(size: 20),ui.icons.nav(size: 20),]),
+            Row(children: [
+            ui.icons.plus(size: 20),ui.icons.point(size: 20),ui.icons.scr(size: 20),ui.icons.search(size: 20),ui.icons.shop(size: 20),ui.icons.voice(size: 20)
           ])],
         ),
       ),)

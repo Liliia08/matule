@@ -23,6 +23,8 @@ class AppImages {
   Image voice({double? size, Color? color}) => _icon('voice', size: size, color: color);
   Image nav({double? size, Color? color}) => _icon('nav', size: size, color: color);
   Image doc({double? size, Color? color}) => _icon('doc', size: size, color: color);
+  Image vk({double? size, Color? color}) => _icon('vk',size: size, color: color);
+  Image yandex({double? size, Color? color}) => _icon('yandex',size: size, color: color);
 
 
   Image _icon(String name, {double? size, Color? color}) {

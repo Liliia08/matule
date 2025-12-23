@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 //import 'package:uikit/src/typography.dart';
 import 'package:uikit/uikit.dart';
+import 'package:uikit/src/images/icons.dart';
 
 class Login {
   final Font font = Font();
+
 
   Widget VK({VoidCallback? onPressed}) {
     return ElevatedButton(
@@ -19,9 +21,9 @@ class Login {
       child: Row(
         children: [
           SizedBox(width: 100.5,),
-          Image.asset('assets/images/vk.png',height: 32,width: 32,),
+          ui.icons.vk (size: 32),
           SizedBox(width: 16),
-          Text('Войти с VK', style: font.title3Semibold),
+          Text('Войти с VK', style: ui.font.title3Semibold),
         ],
       ),
     );
@@ -40,9 +42,9 @@ class Login {
       child: Row(
         children: [
           SizedBox(width: 83.5,),
-          Image.asset('assets/images/yandex.png',height: 32,width: 32,),
+          ui.icons.yandex(size: 32),
           SizedBox(width: 16),
-          Text('Войти с Yandex', style: font.title3Semibold),
+          Text('Войти с Yandex', style: ui.font.title3Semibold),
         ],
       ),
     );
