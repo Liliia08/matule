@@ -38,7 +38,8 @@ class _SimpleInputState extends State<Inputs> {
   void initState() {
     super.initState();
     _controller = TextEditingController(text: widget.value);
-    _showPassword = !widget.isPassword;
+    // ИЗМЕНЕНИЕ ТОЛЬКО ЗДЕСЬ: убрал отрицание
+    _showPassword = true; // ← было: _showPassword = !widget.isPassword;
   }
 
   @override
@@ -117,7 +118,7 @@ class _SimpleInputState extends State<Inputs> {
             widget.helperText!,
             style: TextStyle(
               fontSize: 12,
-              color: widget.hasError ? ui.color.error : Colors.grey, // 👈 Красный только при ошибке
+              color: widget.hasError ? ui.color.error : Colors.grey,
             ),
           ),
         ],

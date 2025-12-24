@@ -79,6 +79,14 @@ class _StorybookState extends State<Storybook> {
             Inputs(value: '*********', isPassword: true,),
             SizedBox(height: 10),
             Inputs(hint: '--.--.----'),
+              SizedBox(height: 10,),
+              ui.tabbar.create(initialIndex: 0),
+            SizedBox(height: 10,),
+              ui.tabbar.create(initialIndex: 1),
+            SizedBox(height: 10,),
+              ui.tabbar.create(initialIndex: 2),
+            SizedBox(height: 10,),
+              ui.tabbar.create(initialIndex: 3),
           ]
         ),
       ),)

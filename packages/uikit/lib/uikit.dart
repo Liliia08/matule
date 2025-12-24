@@ -10,6 +10,7 @@ import 'package:uikit/src/components/buttoms/cart.dart';
 import 'package:uikit/src/components/buttoms/chips.dart';
 import 'package:uikit/src/components/buttoms/login.dart';
 import 'package:uikit/src/components/inputs/input.dart';
+import 'package:uikit/src/components/tabbar/tabbar.dart';
 
 
 
@@ -22,6 +23,7 @@ export 'src/components/buttoms/cart.dart';
 export 'src/components/buttoms/chips.dart';
 export 'src/components/buttoms/login.dart';
 export 'src/components/inputs/input.dart';
+export 'src/components/tabbar/tabbar.dart';
 
 class UIKit {
   static final UIKit _instance = UIKit._internal();
@@ -37,6 +39,7 @@ class UIKit {
   Chips get chips => Chips();
   Login get login => Login();
   Inputs get input => Inputs();
+  BottomNavigation get tabbar => BottomNavigation();
 }
 
 final ui = UIKit();
