@@ -25,7 +25,14 @@ class AppImages {
   Image doc({double? size, Color? color}) => _icon('doc', size: size, color: color);
   Image vk({double? size, Color? color}) => _icon('vk',size: size, color: color);
   Image yandex({double? size, Color? color}) => _icon('yandex',size: size, color: color);
-
+  Image home({double? size, Color? color}) => _icon('home',size: size, color: color);
+  Image homeC({double? size, Color? color}) => _icon('homeC',size: size, color: color);
+  Image kat({double? size, Color? color}) => _icon('kat',size: size, color: color);
+  Image katC({double? size, Color? color}) => _icon('katC',size: size, color: color);
+  Image project({double? size, Color? color}) => _icon('project',size: size, color: color);
+  Image projectC({double? size, Color? color}) => _icon('projectC',size: size, color: color);
+  Image profile({double? size, Color? color}) => _icon('profile',size: size, color: color);
+  Image profileC({double? size, Color? color}) => _icon('profileC',size: size, color: color);
 
   Image _icon(String name, {double? size, Color? color}) {
     return Image.asset(
