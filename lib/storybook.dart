@@ -62,7 +62,24 @@ class _StorybookState extends State<Storybook> {
             ui.icons.message(size: 20),ui.icons.minus(size: 20),ui.icons.nav(size: 20),]),
             Row(children: [
             ui.icons.plus(size: 20),ui.icons.point(size: 20),ui.icons.scr(size: 20),ui.icons.search(size: 20),ui.icons.shop(size: 20),ui.icons.voice(size: 20)
-          ])],
+            ]),
+            SizedBox(height: 10,),
+            Inputs(hint: 'Введите имя',showValidationBorder: true,),
+            SizedBox(height: 10),
+            Inputs( value: 'Иван' , showValidationBorder: true,),
+            SizedBox(height: 10),
+            Inputs(label: 'Имя', hint: 'Введите имя',),
+            SizedBox(height: 10),
+            Inputs(hint: 'Имя',hasError: true,helperText: 'Введите ваше имя',),
+            SizedBox(height:10),
+            Inputs(label: 'Имя', hint: 'Введите имя',),
+            SizedBox(height: 10),
+            Inputs(label: 'Имя', value: 'Введите имя',),
+            SizedBox(height: 10),
+            Inputs(value: '*********', isPassword: true,),
+            SizedBox(height: 10),
+            Inputs(hint: '--.--.----'),
+          ]
         ),
       ),)
     );

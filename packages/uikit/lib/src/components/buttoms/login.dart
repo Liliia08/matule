@@ -28,6 +28,7 @@ class Login {
       ),
     );
   }
+
   Widget Yandex({VoidCallback? onPressed}) {
     return ElevatedButton(
       onPressed: onPressed,
