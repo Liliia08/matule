@@ -145,7 +145,7 @@ class _SimpleInputState extends State<Inputs> {
     if (widget.showValidationBorder && _controller.text.isNotEmpty) {
       return Color(0xFFB8C1CC);}
 
-    return Color(0xFFEBEBEB) ?? Colors.grey[400]!;
+    return Color(0xFFEBEBEB);
   }
 
   @override
