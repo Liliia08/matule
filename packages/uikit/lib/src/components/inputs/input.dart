@@ -39,7 +39,7 @@ class _SimpleInputState extends State<Inputs> {
     super.initState();
     _controller = TextEditingController(text: widget.value);
     // ИЗМЕНЕНИЕ ТОЛЬКО ЗДЕСЬ: убрал отрицание
-    _showPassword = true; // ← было: _showPassword = !widget.isPassword;
+   _showPassword = !widget.isPassword;
   }
 
   @override
@@ -70,6 +70,7 @@ class _SimpleInputState extends State<Inputs> {
               child: TextFormField(
                 controller: _controller,
                 obscureText: widget.isPassword && !_showPassword,
+                obscuringCharacter: '*',
                 cursorColor: widget.hasError ? ui.color.error : ui.color.accent,
                 decoration: InputDecoration(
                   hintText: widget.hint,
@@ -86,8 +87,8 @@ class _SimpleInputState extends State<Inputs> {
                   suffixIcon: widget.isPassword && widget.showEyeIcon
                       ? IconButton(
                     icon: _showPassword
-                        ? ui.icons.closeEye(size: 20)
-                        : ui.icons.eye(size: 20),
+                        ? ui.icons.eye(size: 20)
+                        : ui.icons.closeEye(size: 20),
                     onPressed: () {
                       setState(() => _showPassword = !_showPassword);
                     },
