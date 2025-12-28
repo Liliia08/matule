@@ -39,7 +39,7 @@ class _SimpleInputState extends State<Inputs> {
     super.initState();
     _controller = TextEditingController(text: widget.value);
     // ИЗМЕНЕНИЕ ТОЛЬКО ЗДЕСЬ: убрал отрицание
-   _showPassword = !widget.isPassword;
+   _showPassword = false;//!widget.isPassword;
   }
 
   @override

@@ -133,7 +133,7 @@ class _StorybookState extends State<Storybook> {
               SizedBox(height: 10),
               Inputs(label: 'Имя', value: 'Введите имя'),
               SizedBox(height: 10),
-              Inputs(value: '*********', isPassword: true),
+              Inputs(value: '******', isPassword: true),
               SizedBox(height: 10),
               Inputs(hint: '--.--.----'),
               SizedBox(height: 10),
