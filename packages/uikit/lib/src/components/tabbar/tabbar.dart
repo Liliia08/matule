@@ -2,18 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:uikit/uikit.dart';
 
 class BottomNavigation {
-
-  // Метод для создания навигации с индексом
-  Widget create({int initialIndex = 0}) {
-    return _BottomNavigationWidget(initialIndex: initialIndex);
+  // Добавляем параметр onIndexChanged
+  Widget create({int initialIndex = 0, ValueChanged<int>? onIndexChanged}) {
+    return _BottomNavigationWidget(
+      initialIndex: initialIndex,
+      onIndexChanged: onIndexChanged,
+    );
   }
 }
 
-// Внутренний виджет
 class _BottomNavigationWidget extends StatefulWidget {
   final int initialIndex;
+  final ValueChanged<int>? onIndexChanged; // Добавляем сюда
 
-  const _BottomNavigationWidget({required this.initialIndex});
+  const _BottomNavigationWidget({
+    required this.initialIndex,
+    this.onIndexChanged, // И сюда
+  });
 
   @override
   State<_BottomNavigationWidget> createState() => _BottomNavigationWidgetState();
@@ -33,7 +38,10 @@ class _BottomNavigationWidgetState extends State<_BottomNavigationWidget> {
     return BottomNavigationBar(
       backgroundColor: Colors.white,
       currentIndex: _currentIndex,
-      onTap: (index) => setState(() => _currentIndex = index),
+      onTap: (index) {
+        setState(() => _currentIndex = index);
+        widget.onIndexChanged?.call(index); 
+      },
       type: BottomNavigationBarType.fixed,
       selectedItemColor: ui.color.accent,
       unselectedItemColor: Color(0xFFB8C1CC),
