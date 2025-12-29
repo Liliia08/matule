@@ -11,6 +11,7 @@ class Inputs extends StatefulWidget {
   final bool showValidationBorder;
   final bool hasError;
   final String? helperText;
+  final String? Function(String?)? validator;
 
   const Inputs({
     super.key,
@@ -23,6 +24,7 @@ class Inputs extends StatefulWidget {
     this.showValidationBorder = false,
     this.hasError = false,
     this.helperText,
+    this.validator,
   });
 
   @override
@@ -33,6 +35,7 @@ class _SimpleInputState extends State<Inputs> {
   late TextEditingController _controller;
   bool _showPassword = false;
   bool _isFocused = false;
+  String? _validationError;
 
   @override
   void initState() {

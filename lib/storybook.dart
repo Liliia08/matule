@@ -174,7 +174,9 @@ class _StorybookState extends State<Storybook> {
               ui.productCard.card(title: "Рубашка Воскресенье для машинного вязания",subtitle: "Мужская одежда", price: "300", button: ui.smallbuttons.primary(text: "Добавить", onPressed: (){})),
               ui.productCard.card(title: "Рубашка Воскресенье для машинного вязания",subtitle: "Мужская одежда", price: "300", button: ui.smallbuttons.Delete(text: "Убрать", onPressed: (){})),
               ui.productCard.noPrice(title: "Мой первый проект",subtitle: "Прошло 2 дня", button: ui.smallbuttons.primary(text: "Открыть", onPressed: (){})),
-              ui.productCard.cartItem(title: "Рубашка Воскресенье для машинного вязания", price: "300", onRemove: (){})
+              ui.productCard.cartItem(title: "Рубашка Воскресенье для машинного вязания", price: "300", onRemove: (){}),
+              SizedBox(height: 10,),
+              ui.search,
             ],
           ),
         ),

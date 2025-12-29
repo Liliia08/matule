@@ -15,6 +15,7 @@ import 'package:uikit/src/components/category/category.dart';
 import 'package:uikit/src/components/control/toggle.dart';
 import 'package:uikit/src/components/card/null.dart';
 import 'package:uikit/src/components/card/primary.dart';
+import 'package:uikit/src/components/searchString/search.dart';
 
 
 
@@ -33,6 +34,7 @@ export 'src/components/category/category.dart';
 export 'src/components/control/toggle.dart';
 export 'src/components/card/null.dart';
 export 'src/components/card/primary.dart';
+export 'src/components/searchString/search.dart';
 
 class UIKit {
   static final UIKit _instance = UIKit._internal();
@@ -54,6 +56,7 @@ class UIKit {
   Toggle get toggle => Toggle();
   Cards get base => Cards();
   ProductCard get productCard => ProductCard();
+  SearchField get search => SearchField();
 }
 
 final ui = UIKit();
