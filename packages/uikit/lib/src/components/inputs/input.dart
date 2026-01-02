@@ -11,6 +11,7 @@ class Inputs extends StatefulWidget {
   final bool showValidationBorder;
   final bool hasError;
   final String? helperText;
+  final String? Function(String?)? validator;
 
   const Inputs({
     super.key,
@@ -23,6 +24,7 @@ class Inputs extends StatefulWidget {
     this.showValidationBorder = false,
     this.hasError = false,
     this.helperText,
+    this.validator,
   });
 
   @override
@@ -33,12 +35,14 @@ class _SimpleInputState extends State<Inputs> {
   late TextEditingController _controller;
   bool _showPassword = false;
   bool _isFocused = false;
+  String? _validationError;
 
   @override
   void initState() {
     super.initState();
     _controller = TextEditingController(text: widget.value);
-    _showPassword = !widget.isPassword;
+    // ИЗМЕНЕНИЕ ТОЛЬКО ЗДЕСЬ: убрал отрицание
+   _showPassword = false;//!widget.isPassword;
   }
 
   @override
@@ -69,6 +73,7 @@ class _SimpleInputState extends State<Inputs> {
               child: TextFormField(
                 controller: _controller,
                 obscureText: widget.isPassword && !_showPassword,
+                obscuringCharacter: '*',
                 cursorColor: widget.hasError ? ui.color.error : ui.color.accent,
                 decoration: InputDecoration(
                   hintText: widget.hint,
@@ -85,8 +90,8 @@ class _SimpleInputState extends State<Inputs> {
                   suffixIcon: widget.isPassword && widget.showEyeIcon
                       ? IconButton(
                     icon: _showPassword
-                        ? ui.icons.closeEye(size: 20)
-                        : ui.icons.eye(size: 20),
+                        ? ui.icons.eye(size: 20)
+                        : ui.icons.closeEye(size: 20),
                     onPressed: () {
                       setState(() => _showPassword = !_showPassword);
                     },
@@ -117,7 +122,7 @@ class _SimpleInputState extends State<Inputs> {
             widget.helperText!,
             style: TextStyle(
               fontSize: 12,
-              color: widget.hasError ? ui.color.error : Colors.grey, // 👈 Красный только при ошибке
+              color: widget.hasError ? ui.color.error : Colors.grey,
             ),
           ),
         ],
@@ -144,7 +149,7 @@ class _SimpleInputState extends State<Inputs> {
     if (widget.showValidationBorder && _controller.text.isNotEmpty) {
       return Color(0xFFB8C1CC);}
 
-    return Color(0xFFEBEBEB) ?? Colors.grey[400]!;
+    return Color(0xFFEBEBEB);
   }
 
   @override

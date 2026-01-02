@@ -35,7 +35,7 @@ class SmallButtons {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: colors.white,
+        backgroundColor: Colors.white,
         foregroundColor: colors.accent,
         minimumSize: Size(96, 40),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
