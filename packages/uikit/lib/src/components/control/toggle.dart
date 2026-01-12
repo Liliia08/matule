@@ -36,26 +36,33 @@ class _ToggleState extends State<Toggle> {
       child: Container(
         width: 48,
         height: 28,
-        padding: EdgeInsets.all(2),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: _isActive ? ui.color.accent : Colors.grey[300],
+          borderRadius: BorderRadius.circular(14), // 28/2 = 14
+          color: _isActive ? ui.color.accent : Color(0xFFEBEBEB),
         ),
-        child: Align(
-          alignment: _isActive ? Alignment.centerRight : Alignment.centerLeft,
-          child: Container(
-            width: 27,
-            height: 27,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 2,
-                  offset: Offset(0, 1),
-                ),
-              ],
+        child: Padding(
+          padding: EdgeInsets.all(2),
+          child: Align(
+            alignment: _isActive ? Alignment.centerRight : Alignment.centerLeft,
+            child: Container(
+              width: 24,
+              height: 24,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.06), // 6%
+                    blurRadius: 1,
+                    offset: Offset(0, 3),
+                  ),
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.15), // 15%
+                    blurRadius: 8,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

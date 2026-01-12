@@ -2,29 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:uikit/uikit.dart';
 
 class BottomNavigation {
-  // Добавляем параметр onIndexChanged
   Widget create({int initialIndex = 0, ValueChanged<int>? onIndexChanged}) {
-    return _BottomNavigationWidget(
-      initialIndex: initialIndex,
-      onIndexChanged: onIndexChanged,
-    );
+    return _TabBar(initialIndex: initialIndex, onIndexChanged: onIndexChanged);
   }
 }
 
-class _BottomNavigationWidget extends StatefulWidget {
+class _TabBar extends StatefulWidget {
   final int initialIndex;
-  final ValueChanged<int>? onIndexChanged; // Добавляем сюда
+  final ValueChanged<int>? onIndexChanged;
 
-  const _BottomNavigationWidget({
+  const _TabBar({
     required this.initialIndex,
-    this.onIndexChanged, // И сюда
+    this.onIndexChanged,
   });
 
   @override
-  State<_BottomNavigationWidget> createState() => _BottomNavigationWidgetState();
+  State<_TabBar> createState() => _TabBarState();
 }
 
-class _BottomNavigationWidgetState extends State<_BottomNavigationWidget> {
+class _TabBarState extends State<_TabBar> {
   late int _currentIndex;
 
   @override
@@ -35,43 +31,68 @@ class _BottomNavigationWidgetState extends State<_BottomNavigationWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      backgroundColor: Colors.white,
-      currentIndex: _currentIndex,
-      onTap: (index) {
-        setState(() => _currentIndex = index);
-        widget.onIndexChanged?.call(index); 
-      },
-      type: BottomNavigationBarType.fixed,
-      selectedItemColor: ui.color.accent,
-      unselectedItemColor: Color(0xFFB8C1CC),
-      selectedLabelStyle: TextStyle(
-        color: ui.color.accent,
-        fontSize: 12,
-        fontWeight: FontWeight.w500,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFFA0A0A0).withOpacity(0.3),
+            blurRadius: 20,
+            offset: Offset(0, -0.5),
+          ),
+        ],
       ),
-      unselectedLabelStyle: TextStyle(
-        color: Color(0xFFB8C1CC),
-        fontSize: 12,
+      child: BottomNavigationBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() => _currentIndex = index);
+          widget.onIndexChanged?.call(index);
+        },
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: ui.color.accent,      // #FEE440
+        unselectedItemColor: Color(0xFFB8C1CC),  // #B8C1CC
+        selectedLabelStyle: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          height: 16/12,
+        ),
+        unselectedLabelStyle: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          height: 16/12,
+          color: Color(0xFFB8C1CC),
+        ),
+        items: [
+          BottomNavigationBarItem(
+            icon: _currentIndex == 0
+                ? ui.icons.homeC(size: 32)
+                : ui.icons.home(size: 32),
+            label: 'Главная',
+          ),
+          BottomNavigationBarItem(
+            icon: _currentIndex == 1
+                ? ui.icons.katC(size: 32)
+                : ui.icons.kat(size: 32),
+            label: 'Каталог',
+          ),
+          BottomNavigationBarItem(
+            icon: Container(
+              padding: EdgeInsets.only(top: 5),
+              child: _currentIndex == 2
+                  ? ui.icons.projectC(size: 24)
+                  : ui.icons.project(size: 24),),
+            label: 'Проекты',
+          ),
+          BottomNavigationBarItem(
+            icon: _currentIndex == 3
+                ? ui.icons.profileC(size: 32)
+                : ui.icons.profile(size: 32),
+            label: 'Профиль',
+          ),
+        ],
       ),
-      items: [
-        BottomNavigationBarItem(
-          icon: _currentIndex == 0 ? ui.icons.homeC(size: 32) : ui.icons.home(size: 32),
-          label: 'Главная',
-        ),
-        BottomNavigationBarItem(
-          icon: _currentIndex == 1 ? ui.icons.katC(size: 32) : ui.icons.kat(size: 32),
-          label: 'Каталог',
-        ),
-        BottomNavigationBarItem(
-          icon: _currentIndex == 2 ? ui.icons.projectC(size: 24) : ui.icons.project(size: 24),
-          label: 'Проекты',
-        ),
-        BottomNavigationBarItem(
-          icon: _currentIndex == 3 ? ui.icons.profileC(size: 32) : ui.icons.profile(size: 32),
-          label: 'Профиль',
-        ),
-      ],
     );
   }
 }
